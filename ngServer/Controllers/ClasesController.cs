@@ -30,6 +30,15 @@ namespace ngServer.Controllers
         }
 
 
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult<Seccion> Get(int id)
+        {
+            return Startup.Secciones.FirstOrDefault(c=> c.Id == id);
+        }
+
+
+
         [HttpPost]
         public ActionResult<string> Post(Seccion nuevaSeccion)
         {
