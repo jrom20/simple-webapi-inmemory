@@ -1,11 +1,17 @@
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace ngServer
 {
 
-    public partial class Seccion : ISeccion
+    public partial class Clase : IClase
     {
+        public Clase()
+        {
+            Secciones = new List<Seccion>();
+        }
+
         [JsonProperty("id")]
         public long Id { get; set; }
 
@@ -22,10 +28,10 @@ namespace ngServer
         public string ImageUrl { get; set; }
 
         [JsonProperty("secciones", NullValueHandling = NullValueHandling.Ignore)]
-        public Seccione[] Secciones { get; set; }
+        public List<Seccion> Secciones { get; set; }
     }
 
-    public interface ISeccion
+    public interface IClase
     {
 
     }
@@ -39,7 +45,7 @@ namespace ngServer
         public string Campus { get; set; }
     }
 
-    public partial class Seccione
+    public partial class Seccion
     {
         [JsonProperty("id")]
         public long Id { get; set; }

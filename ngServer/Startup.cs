@@ -15,7 +15,7 @@ namespace ngServer
 {
     public class Startup
     {
-        public static List<Seccion> Secciones = new List<Seccion>();
+        public static List<Clase> Clases = new List<Clase>();
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
