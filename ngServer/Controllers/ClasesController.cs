@@ -41,8 +41,9 @@ namespace ngServer.Controllers
         [Route("{idClase}/secciones")]
         public ActionResult<string> PostNewSeccion(int idClase, Seccion seccion)
         {
+            //he did some changes here
             var caseActual = Startup.Clases.FirstOrDefault(c => c.Id == idClase);
-
+            //he did some changes here
             if (caseActual != null)
             {
                 var lastId = caseActual.Secciones.OrderByDescending(c => c.Id).FirstOrDefault().Id;
@@ -50,9 +51,11 @@ namespace ngServer.Controllers
                 caseActual.Secciones.Add(seccion);
                 
                 return "OK";
+                //he did some changes here
             }
             else
             {
+                //he did some changes here
                 return "Failed";
             }
             
