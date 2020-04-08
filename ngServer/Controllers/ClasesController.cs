@@ -42,6 +42,7 @@ namespace ngServer.Controllers
         public ActionResult<string> PostNewSeccion(int idClase, Seccion seccion)
         {
             //he did some changes here
+            //I did some changes here
             var caseActual = Startup.Clases.FirstOrDefault(c => c.Id == idClase);
             //he did some changes here
             if (caseActual != null)
@@ -55,6 +56,7 @@ namespace ngServer.Controllers
             }
             else
             {
+                //I did some changes here
                 //he did some changes here
                 return "Failed";
             }
@@ -65,6 +67,7 @@ namespace ngServer.Controllers
         [HttpPost]
         public ActionResult<string> Post(Clase nuevaSeccion)
         {
+            //I did some changes here
             var lastId = Startup.Clases.OrderByDescending(c => c.Id).FirstOrDefault().Id;
             nuevaSeccion.Id = lastId + 1;
 
