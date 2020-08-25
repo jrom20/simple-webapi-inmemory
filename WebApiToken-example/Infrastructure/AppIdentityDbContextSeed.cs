@@ -23,7 +23,7 @@ namespace ngServer.Infrastructure
 
             await roleManager.CreateAsync(new IdentityRole("Administrators"));
 
-            var defaultUser = new ApplicationUser { UserName = "juanjo.rm00@gmail.com", Email = "juanjo.rm00@gmail.com" };
+            var defaultUser = new ApplicationUser { FirstName ="Juan", LastName = "Romero", UserName = "juanjo.rm00@gmail.com", Email = "juanjo.rm00@gmail.com" };
             await userManager.CreateAsync(defaultUser, "Pass@word1");
 
             string adminUserName = "admin@localhost.com";

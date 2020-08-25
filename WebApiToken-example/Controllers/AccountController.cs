@@ -56,7 +56,9 @@ namespace ngServer.Controllers
                         {
                           new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                           new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                          new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
+                          new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
+                          new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                          new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
                         };
 
                         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
